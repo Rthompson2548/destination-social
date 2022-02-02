@@ -1,0 +1,28 @@
+/* styling individual list items */
+
+.user-container {
+  display: flex;
+  flex-direction: row;
+  margin: 6px;
+}
+
+.user-info {
+  float: left;
+  margin-bottom: 24px;
+  margin-left: 20px;
+  color: #000 !important;
+}
+
+.user-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.user-places {
+  font-size: 12px;
+  color: rgb(116, 116, 116);
+  font-weight: 300;
+}
+
+@media (min-width: 550px) {
+}

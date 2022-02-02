@@ -1,0 +1,23 @@
+.input {
+  display: flex;
+  flex-direction: column;
+  margin: 5% 25%;
+  font-size: 14px;
+}
+
+.input-label {
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.input-element {
+  width: 250px;
+  display: flex;
+  height: 30px;
+}
+
+@media (min-width: 700px) {
+  .input {
+    margin: 2% 35%;
+  }
+}

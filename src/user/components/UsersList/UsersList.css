@@ -1,0 +1,12 @@
+/* styling the format of the list of all users */
+
+.users-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  /* margin: 5% 10%; */
+  margin-right: 10%;
+}
+
+@media (min-width: 550px) {
+}
