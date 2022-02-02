@@ -10,7 +10,8 @@ import NewPlace from "./places/pages/NewPlace/NewPlace";
 import MainNavigation from "./shared/components/Navigation/MainNavigation/MainNavigation";
 import UserPlaces from "./places/pages/UserPlaces/UserPlaces";
 import UpdatePlace from "./places/pages/UpdatePlace/UpdatePlace";
-import Authenticate from "./user/pages/Authenticate/Authenticate";
+import Authenticate from "./user/pages/Authenticate/Authenticate/Authenticate";
+import SignUp from "./user/pages/Authenticate/SignUp/SignUp";
 
 const App = () => {
   return (
@@ -21,8 +22,11 @@ const App = () => {
           <Route path="/" exact>
             <Users />
           </Route>
-          <Route path="/auth">
+          <Route path="/login">
             <Authenticate />
+          </Route>
+          <Route path="/signup">
+            <SignUp />
           </Route>
           <Route path="/:userId/places" exact>
             <UserPlaces />

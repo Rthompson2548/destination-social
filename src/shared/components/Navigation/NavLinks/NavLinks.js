@@ -25,8 +25,14 @@ const NavLinks = (props) => {
       </li>
       <li>
         {/* only if not logged in */}
-        <NavLink className="nav-link-item" to="/auth">
+        <NavLink className="nav-link-item" to="/login">
           Login
+        </NavLink>
+      </li>
+      <li>
+        {/* only if not logged in */}
+        <NavLink className="nav-link-item" to="/signup">
+          Sign Up
         </NavLink>
       </li>
     </ul>
