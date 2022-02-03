@@ -5,17 +5,19 @@
 }
 
 .log-in-form-card {
-  padding: 36px;
+  padding: 50px;
 }
 
 .log-in-button {
-  padding-top: 20px;
+  padding-bottom: 12px;
+  margin-left: 30%;
 }
 
 .sign-up-card {
   display: flex;
   flex-direction: row;
   font-size: 12px;
+  padding: 0;
   justify-content: center;
 }
 

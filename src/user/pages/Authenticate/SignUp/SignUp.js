@@ -5,6 +5,7 @@ import Button from "../../../../shared/components/FormElements/Button/Button";
 import {
   VALIDATOR_EMAIL,
   VALIDATOR_MINLENGTH,
+  VALIDATOR_REQUIRE,
 } from "../../../../shared/util/validators";
 import Card from "../../../../shared/components/UIElements/Card/Card";
 import "./SignUp.css";
@@ -40,8 +41,18 @@ const SignUp = () => {
     <form className="sign-up-form" onSubmit={signupSubmitHandler}>
       <h2>Sign Up</h2>
 
-      {/* to do: check that email does not already exist in the database */}
       <Card className="sign-up-form-card">
+        <Input
+          id="name"
+          element="input"
+          type="text"
+          label="Name"
+          validators={[VALIDATOR_REQUIRE()]}
+          errorText="Name is required"
+          onInput={inputHandler}
+        />
+
+        {/* to do: check that email does not already exist in the database */}
         <Input
           id="email"
           element="input"
@@ -49,17 +60,6 @@ const SignUp = () => {
           label="Email"
           validators={[VALIDATOR_EMAIL()]}
           errorText="The email you entered is not valid"
-          onInput={inputHandler}
-        />
-
-        {/* to do: check that username does not already exist in the database */}
-        <Input
-          id="username"
-          element="input"
-          type="text"
-          label="Create Username"
-          validators={[VALIDATOR_MINLENGTH(10)]}
-          errorText="Username must be a minimum of 10 characters"
           onInput={inputHandler}
         />
 
