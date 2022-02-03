@@ -1,0 +1,27 @@
+.log-in-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.log-in-form-card {
+  padding: 36px;
+}
+
+.log-in-button {
+  padding-top: 20px;
+}
+
+.sign-up-card {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  justify-content: center;
+}
+
+.sign-up-create-account {
+  text-decoration: none;
+  color: rgb(28, 2, 255);
+  margin-top: 12px;
+  margin-left: 5px;
+}

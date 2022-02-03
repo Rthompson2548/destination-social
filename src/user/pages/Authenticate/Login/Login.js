@@ -7,7 +7,9 @@ import {
 } from "../../../../shared/util/validators";
 import Button from "../../../../shared/components/FormElements/Button/Button";
 import "./Login.css";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { Link } from "react-router-dom";
+import Card from "../../../../shared/components/UIElements/Card/Card";
+// import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 /**
  * to do:
@@ -53,11 +55,11 @@ const USERS = [
 ];
 
 const Login = () => {
-  const userEmail = useParams().userEmail;
+  // const userEmail = useParams().userEmail;
 
-  const existingEmail = USERS.find((user) => {
-    return user.email === userEmail;
-  });
+  // const existingEmail = USERS.find((user) => {
+  //   return user.email === userEmail;
+  // });
 
   const [formState, inputHandler] = useForm(
     /** initial inputs param from useForm */
@@ -81,41 +83,45 @@ const Login = () => {
   };
 
   return (
-    <form className="authentication-form" onSubmit={loginSubmitHandler}>
+    <form className="log-in-form" onSubmit={loginSubmitHandler}>
       <h2>Log in</h2>
-      <Input
-        id="email"
-        element="input"
-        type="email"
-        label="Email"
-        validators={[VALIDATOR_EMAIL()]}
-        errorText="The email you entered is not valid"
-        onInput={inputHandler}
-      />
+      <Card className="log-in-form-card">
+        <Input
+          id="email"
+          element="input"
+          type="email"
+          label="Email"
+          validators={[VALIDATOR_EMAIL()]}
+          errorText="The email you entered is not valid"
+          onInput={inputHandler}
+        />
 
-      <Input
-        id="password"
-        element="input"
-        type="text"
-        label="Password"
-        validators={[VALIDATOR_MINLENGTH(10)]}
-        errorText="Password must be a minimum of 5 characters"
-        onInput={inputHandler}
-      />
+        <Input
+          id="password"
+          element="input"
+          type="text"
+          label="Password"
+          validators={[VALIDATOR_MINLENGTH(10)]}
+          errorText="Password must be a minimum of 5 characters"
+          onInput={inputHandler}
+        />
 
-      <div className="login-button">
-        {/* redirects user to home page if they are logged in successfully */}
-        <Button type="submit" disabled={!formState.isValid}>
-          Log in
-        </Button>
-      </div>
+        <div className="log-in-button">
+          {/* redirects user to home page if they are logged in successfully */}
+          <Button type="submit" disabled={!formState.isValid}>
+            Log in
+          </Button>
+        </div>
 
-      <div className="sign-up-button">
-        {/* redirects user to home page if they are logged in successfully */}
-        <Button type="submit" to="/signup">
-          Sign up
-        </Button>
-      </div>
+        <div className="create-account">
+          {/* redirects user to home page if they are logged in successfully */}
+
+          <Card className="sign-up-card">
+            <p className="new-user">New here? </p>
+            <Link className="sign-up-create-account" to="/signup">Create account</Link>
+          </Card>
+        </div>
+      </Card>
     </form>
   );
 };

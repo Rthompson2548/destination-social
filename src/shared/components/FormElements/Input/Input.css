@@ -1,7 +1,6 @@
 .input {
   display: flex;
   flex-direction: column;
-  margin: 5% 25%;
   font-size: 14px;
 }
 
@@ -17,7 +16,4 @@
 }
 
 @media (min-width: 700px) {
-  .input {
-    margin: 2% 35%;
-  }
 }
