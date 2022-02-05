@@ -5,6 +5,10 @@
 */
 import { createContext } from "react";
 
-/** createContext(defaultValue) */
-createContext({isLoggedIn: false, login: () })
+/** createContext(defaultValue, method(s)) */
+export const UserContext = createContext({
+     isLoggedIn: false,
+     login: () => { },
+     logout: () => { }
+})
 

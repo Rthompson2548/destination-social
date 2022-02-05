@@ -1,6 +1,6 @@
 import React from "react";
 import "./UsersList.css";
-import UserItem from "../UserItem/UserItem";
+import UserItem from "../../components/UserItem/UserItem";
 import Card from "../../../shared/components/UIElements/Card/Card";
 /** displays a list of all users, or a not found message if no users exist */
 const UsersList = (props) => {

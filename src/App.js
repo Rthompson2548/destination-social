@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -12,10 +12,32 @@ import UserPlaces from "./places/pages/UserPlaces/UserPlaces";
 import UpdatePlace from "./places/pages/UpdatePlace/UpdatePlace";
 import Authenticate from "./user/pages/Authenticate/Authenticate/Authenticate";
 import SignUp from "./user/pages/Authenticate/SignUp/SignUp";
+import { UserContext } from "./shared/context/user-context/user-context";
 
 const App = () => {
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  /** const callBackSyntax = useCallBack(function(params) => 
+   * {action(s)}, 
+   * [dependencies]) 
+  */
+  const login = useCallback(() => {
+    setIsLoggedIn(true);
+  }, []);
+
+  const logout = useCallback(() => {
+    setIsLoggedIn(false);
+  }, []);
+
   return (
-    <Router>
+    <UserContext.Provider
+      /** app will change user login status anytime `value` changes */
+      value={{
+      isLoggedIn: isLoggedIn,
+      login: login,
+      logout: logout
+    }}>
+      <Router>
       <MainNavigation />
       <main>
         <Switch>
@@ -43,6 +65,7 @@ const App = () => {
         </Switch>
       </main>
     </Router>
+    </UserContext.Provider>
   );
 };
 export default App;
