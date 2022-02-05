@@ -9,6 +9,10 @@ const formReducer = (state, action) => {
       let formIsValid = true;
       /** iterates through all  */
       for (const inputId in state.inputs) {
+        /** skips the userId property if it does not exist */
+        if(!state.inputs[inputId]) {
+          continue;
+        }
         /* checks if the input being received is the input is 
           getting updated in the current action */
         if (inputId === action.inputId) {

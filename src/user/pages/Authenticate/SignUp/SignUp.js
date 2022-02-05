@@ -1,7 +1,9 @@
 import React from "react";
+
 import Input from "../../../../shared/components/FormElements/Input/Input";
 import { useForm } from "../../../../shared/hooks/form-hook/form-hook";
 import Button from "../../../../shared/components/FormElements/Button/Button";
+import { Link } from "react-router-dom";
 import {
   VALIDATOR_EMAIL,
   VALIDATOR_MINLENGTH,
@@ -10,6 +12,9 @@ import {
 import Card from "../../../../shared/components/UIElements/Card/Card";
 import "./SignUp.css";
 
+/** TO DO: 
+ * delete component eventually as the login component takes care of it
+*/
 const SignUp = () => {
   const signupSubmitHandler = (event) => {
     event.preventDefault();
@@ -69,15 +74,25 @@ const SignUp = () => {
           type="text"
           label="Create Password"
           validators={[VALIDATOR_MINLENGTH(10)]}
-          errorText="Password must be a minimum of 5 characters"
+          errorText="Password must be a minimum of 10 characters"
           onInput={inputHandler}
         />
 
         <div className="sign-up-button">
           {/* redirects user to home page if they are logged in successfully */}
-          <Button type="submit" disabled={!formState.isValid}>
+          <Button type="submit"
+          /** does not change to clickable when form state is valid */
+          /** disabled={!formState.isValid} */
+           >
             Sign up
           </Button>
+        </div>
+        <div className="log-in-button">
+          {/* redirects user to home page if they are logged in successfully */}
+          <Link to="/login">
+          <Button type="submit">
+            Log In
+          </Button></Link>
         </div>
       </Card>
     </form>
