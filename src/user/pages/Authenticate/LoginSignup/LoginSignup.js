@@ -1,18 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Input from "../../../../shared/components/FormElements/Input/Input";
-import { useForm } from "../../../../shared/hooks/form-hook/form-hook";
+import { useForm } from "../../../../shared/form-hook/form-hook";
 import {
   VALIDATOR_EMAIL,
   VALIDATOR_MINLENGTH,
   VALIDATOR_REQUIRE,
 } from "../../../../shared/util/validators";
 import Button from "../../../../shared/components/FormElements/Button/Button";
-// import { Link } from "react-router-dom";
 import Card from "../../../../shared/components/UIElements/Card/Card";
-// import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { UserContext } from "../../../../shared/user-context/user-context";
 
-const Login = () => {
-  
+
+const LoginSignup = () => {
+
+  const user = useContext(UserContext);
   const [userExists, setUserExists] = useState(true);
 
   const handleUserSignUp = () => {
@@ -39,6 +40,7 @@ const Login = () => {
   const loginSubmitHandler = (event) => {
     event.preventDefault();
     console.log(formState.inputs); /** send this to backend */
+    user.login();
   };
 
   return (
@@ -96,4 +98,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginSignup;

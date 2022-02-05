@@ -1,7 +1,7 @@
 import React from "react";
 
 import Input from "../../../../shared/components/FormElements/Input/Input";
-import { useForm } from "../../../../shared/hooks/form-hook/form-hook";
+import { useForm } from "../../../../shared/form-hook/form-hook";
 import Button from "../../../../shared/components/FormElements/Button/Button";
 import { Link } from "react-router-dom";
 import {

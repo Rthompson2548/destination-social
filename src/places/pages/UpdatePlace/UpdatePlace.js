@@ -4,7 +4,7 @@ import "./UpdatePlace.css";
 import Card from "../../../shared/components/UIElements/Card/Card";
 import Input from "../../../shared/components/FormElements/Input/Input";
 import Button from "../../../shared/components/FormElements/Button/Button";
-import { useForm } from "../../../shared/hooks/form-hook/form-hook";
+import { useForm } from "../../../shared/form-hook/form-hook";
 /** just need the validators that require a value and require a minimum length of that value */
 import {
   VALIDATOR_REQUIRE,
