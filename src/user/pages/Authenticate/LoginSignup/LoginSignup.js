@@ -40,13 +40,14 @@ const LoginSignup = () => {
   const loginSubmitHandler = (event) => {
     event.preventDefault();
     console.log(formState.inputs); /** send this to backend */
+    /** sets loggedIn to true, which will change state of components to the routes defined in App for loggedIn state of true  */
     user.login();
   };
 
   return (
     <Card className="log-in-form-card">
     <form className="log-in-form" onSubmit={loginSubmitHandler}>
-    {userExists ? <h2>Login</h2> : <h2>Sign Up</h2>}
+    {userExists ? <h2>Log In</h2> : <h2>Sign Up</h2>}
       {/* only displays the name field if the user does not have an account */}
       {!userExists && 
         <Input 

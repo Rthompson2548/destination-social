@@ -41,11 +41,11 @@ const App = () => {
         <Route path="/:userId/places" exact>
           <UserPlaces />
         </Route>
-        <Route path="/places/:placeId">
-          <UpdatePlace />
+        <Route path="/places/new" exact>
+          <NewPlace />
         </Route>
-        <Route path="/places/new">
-            <NewPlace />
+        <Route path="/places/:placeId" exact>
+          <UpdatePlace />
         </Route>
         <Route path="/signup">
           <SignUp />
@@ -58,6 +58,9 @@ const App = () => {
       <Switch>
         <Route path="/" exact>
             <Users />
+        </Route>
+        <Route path="/:userId/places" exact>
+          <UserPlaces />
         </Route>
         <Route path="/login">
           <LoginSignup />
@@ -79,12 +82,14 @@ const App = () => {
       login: login,
       logout: logout
     }}>
+      
       <Router>
+      {/* nav bar */}
       <MainNavigation />
-      <main>
-
+        <main>
+          {/* displays all components to be shown when user is logged in */}
          {routes}
-      </main>
+        </main>
     </Router>
     </UserContext.Provider>
   );

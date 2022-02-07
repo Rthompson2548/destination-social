@@ -10,7 +10,7 @@ const PlaceList = (props) => {
       <Card>
         <h2>No places found. Maybe create one?</h2>
         {/* redirects user to new place page */}
-        <Button to="/places/new">Share place</Button>
+        <Button to="/places/new">New place</Button>
       </Card>
     );
   }

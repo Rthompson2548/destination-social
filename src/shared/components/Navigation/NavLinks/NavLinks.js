@@ -37,7 +37,7 @@ const NavLinks = (props) => {
       {!loginStatus.isLoggedIn &&
         <li>
           <NavLink className="nav-link-item" to="/login">
-            Login
+            Log In
           </NavLink>
         </li>
       }
@@ -47,6 +47,14 @@ const NavLinks = (props) => {
           Sign Up
         </NavLink>
       </li>
+
+      {/* only displays the log out button in nav bar if the user is logged in */}
+      {loginStatus.isLoggedIn && (
+        <li>
+          {/* sets the loggedIn status to be logged out and render the isLoggedIn useContext components */}
+          <button onClick={loginStatus.logout}>Log Out</button>
+        </li>
+      )}
     </ul>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+
 import "./UpdatePlace.css";
-import Card from "../../../shared/components/UIElements/Card/Card";
 import Input from "../../../shared/components/FormElements/Input/Input";
 import Button from "../../../shared/components/FormElements/Button/Button";
 import { useForm } from "../../../shared/form-hook/form-hook";
@@ -69,13 +69,11 @@ const DUMMY_PLACES = [
   },
 ];
 
-const UpdatePlace = () => {
+const UpdatePlace = (props) => {
   const [isLoading, setIsLoading] = useState(true);
 
   /* `.placeId` => used as path param in App component Route */
   const placeId = useParams().placeId;
-
-
 
   const [formState, inputHandler, setFormData] = useForm(
     {
@@ -116,13 +114,13 @@ const UpdatePlace = () => {
     /* only sets the form data when the place changes */
   }, [setFormData, placeToUpdate]);
 
-  if (!placeToUpdate) {
-    return (
-      <Card>
-        <h2>Could not find place</h2>
-      </Card>
-    );
-  }
+  // if (!placeToUpdate) {
+  //   return (
+  //     <Card>
+  //       <h2>Could not find place</h2>
+  //     </Card>
+  //   );
+  // }
 
   const placeUpdateSubmitHandler = (event) => {
     event.preventDefault();
@@ -167,12 +165,13 @@ const UpdatePlace = () => {
         initialValid={formState.inputs.description.isValid}
       />
       {/* submit button */}
-
-      <Button type="submit" to="" disabled={!formState.isValid}>
-        Update place
+      <Button type="submit" disabled={!formState.isValid}>
+        {/* returns to home page */}
+        <Link to={`/`}>Update Place</Link>
       </Button>
     </form>
   );
 };
 
 export default UpdatePlace;
+

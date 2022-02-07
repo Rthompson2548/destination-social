@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./PlaceItem.css";
 import Card from "../../../shared/components/UIElements/Card/Card";
 import Button from "../../../shared/components/FormElements/Button/Button";
 import Modal from "../../../shared/components/UIElements/Modal/Modal";
 import Map from "../../../shared/components/UIElements/Map/Map";
+import { UserContext } from "../../../shared/user-context/user-context";
 
 const PlaceItem = (props) => {
+  
+  /** gives the component access to the login status of the user */
+  const loginStatus = useContext(UserContext);
+
   const [showMap, setShowMap] = useState(false);
 
   const openMapHandler = () => {
@@ -42,8 +47,6 @@ const PlaceItem = (props) => {
         show={showMap}
         onCancel={closeMapHandler}
         header={props.address}
-        // contentClass=""
-        // footerClass=""
         className="footer-button"
         footer={<Button onClick={closeMapHandler}>Close</Button>}
       >
@@ -60,10 +63,8 @@ const PlaceItem = (props) => {
         onCancel={cancelDeletePlaceHandler}
         footer={
           <div>
-            {/* removes delete warning alert from the page */}
-            <Button onClick={cancelDeletePlaceHandler}>Cancel</Button>
-            {/* logs a deletion confirmation message in the console */}
-            <Button onClick={confirmDeletePlaceHandler}>Delete</Button>
+              <Button onClick={cancelDeletePlaceHandler}>Cancel</Button>        
+              <Button onClick={confirmDeletePlaceHandler}>Delete</Button>     
           </div>
         }
       >
@@ -88,12 +89,15 @@ const PlaceItem = (props) => {
               <h3 className="place-item-address">{props.address}</h3>
             </div>
             <div className="place-item-buttons place-item__actions">
-              <Button inverse onClick={openMapHandler}>
-                Map View
-              </Button>
-              <Button to={`/places/${props.id}`}>Edit</Button>
-              {/* shows the delete warning alert if delete button is clicked */}
-              <Button onClick={deletePlaceHandler}>Delete</Button>
+              <Button inverse onClick={openMapHandler}>Map View</Button>
+              {/* only displays the edit & delete buttons if the user is logged in */}
+              {loginStatus.isLoggedIn && (
+                 <Button to={`/places/${props.id}`}>Edit</Button>
+              )}                     
+      
+              {loginStatus.isLoggedIn && (
+                <Button onClick={deletePlaceHandler}>Delete</Button>
+              )}    
             </div>
           </div>
         </Card>
