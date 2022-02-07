@@ -49,7 +49,8 @@ const LoginSignup = () => {
     <form className="log-in-form" onSubmit={loginSubmitHandler}>
     {userExists ? <h2>Log In</h2> : <h2>Sign Up</h2>}
       {/* only displays the name field if the user does not have an account */}
-      {!userExists && 
+        <div>
+            {!userExists && 
         <Input 
           id="name"  
           element="input" 
@@ -79,18 +80,21 @@ const LoginSignup = () => {
           errorText="Password must be a minimum of 5 characters"
           onInput={inputHandler}
         />
+    </div>
 
         <div className="log-in-button">
           {/* redirects user to home page if they are logged in successfully */}
           <div>
           <Button type="submit" disabled={!formState.isValid}>
-            {userExists ? "Log In" : "Sign Up"}
+            {/* {userExists ? "Log In" : "Sign Up"} */}
+            Log In
           </Button>
           </div>
 
        <div>
-       <Button onClick={handleUserSignUp}>
-       {userExists ? "Sign Up" : "Log in"}
+            <Button to="/signup" onClick={handleUserSignUp}>
+              Sign Up
+          {/* {userExists ? "Sign Up" : "Log in"} */}
         </Button>  
        </div>
         </div>   

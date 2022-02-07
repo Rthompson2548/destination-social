@@ -80,7 +80,7 @@ const SignUp = () => {
 
         <div className="sign-up-button">
           {/* redirects user to home page if they are logged in successfully */}
-          <Button type="submit"
+          <Button type="submit" to="/signup"
           /** does not change to clickable when form state is valid */
           /** disabled={!formState.isValid} */
            >
@@ -90,9 +90,10 @@ const SignUp = () => {
         <div className="log-in-button">
           {/* redirects user to home page if they are logged in successfully */}
           <Link to="/login">
-          <Button type="submit">
-            Log In
-          </Button></Link>
+            <Button type="submit">
+              Log In
+            </Button>
+          </Link>
         </div>
       </Card>
     </form>

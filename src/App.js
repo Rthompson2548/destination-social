@@ -62,13 +62,13 @@ const App = () => {
         <Route path="/:userId/places" exact>
           <UserPlaces />
         </Route>
-        <Route path="/login">
+        <Route path="/login" exact>
           <LoginSignup />
         </Route>
-        <Route path="/signup">
+        <Route path="/signup" exact>
           <SignUp />
         </Route>
-        <Redirect to="/login" />
+        <Redirect to="/login" exact />
       </Switch>
    )
     

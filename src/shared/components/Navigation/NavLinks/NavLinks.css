@@ -22,6 +22,7 @@
 .nav-links a:active,
 .nav-links a.active {
   text-shadow: #fff 1px 0 10px;
+  color: #fe6601;
 }
 
 .nav-links button {
@@ -62,6 +63,13 @@
     color: #fff;
   }
 
+  .nav-links a:hover,
+  .nav-links a:active,
+  .nav-links a.active {
+    text-shadow: #fff 1px 0 10px;
+    color: #fff;
+  }
+
   .log-out-button {
     color: #fff !important;
     padding: 0 !important;
@@ -69,7 +77,6 @@
     background: none !important;
     font-size: 12px !important;
 }
-  
   
 }
 
