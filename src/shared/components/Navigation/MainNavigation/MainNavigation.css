@@ -37,18 +37,14 @@
   display: none;
 }
 
-.main-navigation__drawer-nav {
-  /* height: 100%; */
-}
 
-@media (min-width: 550px) {
-  /* .main-navigation__menu-btn span {
+@media (min-width: 700px) {
+  .main-navigation__menu-btn {
     display: none;
-    justify-content: center;
   }
 
-  .main-navigation__title {
-    color: #fff;
-    display: ;
-  } */
+  .main-navigation__header-nav {
+    display: block;
+  }
+
 }

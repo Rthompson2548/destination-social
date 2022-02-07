@@ -13,9 +13,10 @@ const NavLinks = (props) => {
       <li>
         {/* only if there is nothing after the "/" in url path */}
         <NavLink className="nav-link-item" to="/" exact>
-          All users
+          Home
         </NavLink>
       </li>
+
       {/* only rendered if user is logged in */}
       {loginStatus.isLoggedIn &&
         <li>  
@@ -49,12 +50,12 @@ const NavLinks = (props) => {
       </li>
 
       {/* only displays the log out button in nav bar if the user is logged in */}
-      {loginStatus.isLoggedIn && (
+      {/* {loginStatus.isLoggedIn && ( */}
         <li>
           {/* sets the loggedIn status to be logged out and render the isLoggedIn useContext components */}
-          <button onClick={loginStatus.logout}>Log Out</button>
+          <button className="log-out-button" onClick={loginStatus.logout}>Log Out</button>
         </li>
-      )}
+      {/* )} */}
     </ul>
   );
 };
