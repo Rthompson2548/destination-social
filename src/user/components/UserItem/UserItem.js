@@ -2,12 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./UserItem.css";
 import Avatar from "../../../shared/components/UIElements/Avatar/Avatar";
-import Card from "../../../shared/components/UIElements/Card/Card";
 
 const UserItem = (props) => {
   return (
     <li className="user">
-      {/* <Card> */}
         <Link to={`/${props.id}/places`}>
           <div className="user-container">
             <div className="right">
@@ -21,7 +19,6 @@ const UserItem = (props) => {
             </div>
           </div>
         </Link>
-      {/* </Card> */}
     </li>
   );
 };
