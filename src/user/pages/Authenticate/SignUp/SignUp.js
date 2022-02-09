@@ -44,9 +44,8 @@ const SignUp = () => {
 
   return (
     <form className="sign-up-form" onSubmit={signupSubmitHandler}>
-      <h2>Sign Up</h2>
-
       <Card className="sign-up-form-card">
+          <h2>Sign Up</h2>
         <Input
           id="name"
           element="input"
@@ -78,15 +77,15 @@ const SignUp = () => {
           onInput={inputHandler}
         />
 
-        <div className="sign-up-button">
+       
           {/* redirects user to home page if they are logged in successfully */}
-          <Button type="submit" to="/signup"
+        <Link to="/signup">
+        <Button className="sign-up-button" type="submit" 
           /** does not change to clickable when form state is valid */
           /** disabled={!formState.isValid} */
            >
             Sign up
-          </Button>
-        </div>
+          </Button></Link>
         <div className="log-in-button">
           {/* redirects user to home page if they are logged in successfully */}
           <Link to="/login">

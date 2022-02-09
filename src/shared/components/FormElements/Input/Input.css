@@ -1,20 +1,9 @@
 .input {
-  display: flex;
-  flex-direction: column;
   font-size: 14px;
 }
 
-.input-label {
-  /* margin-top: 10px; */
-  margin-bottom: 10px;
-  color: #000;
-}
-
 .input-element {
-  width: 250px;
-  display: flex;
-  height: 30px;
-  margin-bottom: 12px;
+  margin: 2px 0 12px 0;
 }
 
 @media (min-width: 700px) {

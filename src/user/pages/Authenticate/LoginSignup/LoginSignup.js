@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { Link } from "react-router-dom";
 import Input from "../../../../shared/components/FormElements/Input/Input";
 import { useForm } from "../../../../shared/form-hook/form-hook";
 import {
@@ -9,7 +10,7 @@ import {
 import Button from "../../../../shared/components/FormElements/Button/Button";
 import Card from "../../../../shared/components/UIElements/Card/Card";
 import { UserContext } from "../../../../shared/user-context/user-context";
-
+import "./LoginSignup.css"
 
 const LoginSignup = () => {
 
@@ -45,60 +46,56 @@ const LoginSignup = () => {
   };
 
   return (
-    <Card className="log-in-form-card">
-    <form className="log-in-form" onSubmit={loginSubmitHandler}>
-    {userExists ? <h2>Log In</h2> : <h2>Sign Up</h2>}
-      {/* only displays the name field if the user does not have an account */}
-        <div>
-            {!userExists && 
-        <Input 
-          id="name"  
-          element="input" 
-          type="text"
-          label="Name"
-          validators={[VALIDATOR_REQUIRE()]}
-          errorText="A name is required to create an account"
-          onInput={inputHandler}
-        />
-      }
-        <Input
-          id="email"
-          element="input"
-          type="email"
-          label="Email"
-          validators={[VALIDATOR_EMAIL()]}
-          errorText="The email you entered is not valid"
-          onInput={inputHandler}
-        />
+    <Card>
+      {/* className="log-in-form-card" */}
+       <form onSubmit={loginSubmitHandler}>
+        {userExists ? <h2 className="login-header">Log In</h2> : <h2>Sign Up</h2>}
+      
+        {/* only displays the name field if the user does not have an account */}
+          {!userExists && 
+          <Input 
+            id="name"  
+            element="input" 
+            type="text"
+            label="Name"
+            validators={[VALIDATOR_REQUIRE()]}
+            errorText="A name is required to create an account"
+            onInput={inputHandler}
+          />
+          }
+          <Input
+            id="email"
+            element="input"
+            type="email"
+            label="Email"
+            validators={[VALIDATOR_EMAIL()]}
+            errorText="The email you entered is not valid"
+            onInput={inputHandler}
+          />
 
-        <Input
-          id="password"
-          element="input"
-          type="password"
-          label="Password"
-          validators={[VALIDATOR_MINLENGTH(10)]}
-          errorText="Password must be a minimum of 5 characters"
-          onInput={inputHandler}
-        />
-    </div>
+          <Input
+            id="password"
+            element="input"
+            type="password"
+            label="Password"
+            validators={[VALIDATOR_MINLENGTH(10)]}
+            errorText="Password must be a minimum of 5 characters"
+            onInput={inputHandler}
+          />
+      </form>
 
-        <div className="log-in-button">
+       <div className="buttons">
           {/* redirects user to home page if they are logged in successfully */}
-          <div>
-          <Button type="submit" disabled={!formState.isValid}>
-            {/* {userExists ? "Log In" : "Sign Up"} */}
-            Log In
-          </Button>
-          </div>
-
-       <div>
-            <Button to="/signup" onClick={handleUserSignUp}>
-              Sign Up
-          {/* {userExists ? "Sign Up" : "Log in"} */}
-        </Button>  
-       </div>
-        </div>   
-    </form>
+              <Button className="button" type="submit" disabled={!formState.isValid}>
+                {userExists ? "Log In" : "Sign Up"}
+              </Button>
+          
+        <Link to="/signup">
+          <Button className="button" onClick={handleUserSignUp}>
+            {userExists ? "Sign Up" : "Log in"}
+          </Button>  </Link>
+      </div>
+      
     </Card>
   );
 };

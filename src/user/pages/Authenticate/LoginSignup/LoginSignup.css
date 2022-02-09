@@ -1,3 +1,13 @@
-.log-in-form {
-    width: 10% !important;
+.buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  margin: 5px 0;
+}
+
+.login-header {
+  display: flex;
+  justify-content: center;
 }
