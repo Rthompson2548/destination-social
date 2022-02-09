@@ -7,7 +7,7 @@ const Users = () => {
       id: "u1",
       image:
         "https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1589&q=80",
-      name: "Reilly",
+      name: "Riley",
       places: 10,
       email: "reilly@email.com",
     },
@@ -15,7 +15,7 @@ const Users = () => {
       id: "u2",
       image:
         "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80",
-      name: "Maggie",
+      name: "Max",
       places: 1,
       email: "maggie@email.com",
     },
@@ -23,7 +23,7 @@ const Users = () => {
       id: "u3",
       image:
         "https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1589&q=80",
-      name: "Bailey",
+      name: "Amy",
       places: 4,
       email: "bailey@email.com",
     },

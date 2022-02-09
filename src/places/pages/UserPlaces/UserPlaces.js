@@ -6,6 +6,7 @@ import PlaceList from "../../components/PlaceList/PlaceList";
 const DUMMY_PLACES = [
   {
     id: "p1",
+    pageTitle: "Riley",
     title: "Empire State Building",
     description: "Tall building in New York",
     address: "1234 SE Empire St.",
@@ -19,6 +20,7 @@ const DUMMY_PLACES = [
   },
   {
     id: "p2",
+    pageTitle: "Max",
     title: "Chicago Bean",
     description: "Large metallic bean statue in Chicago",
     address: "5678 SE Bean St.",
@@ -33,6 +35,7 @@ const DUMMY_PLACES = [
   {
     id: "p3",
     title: "Yellowstone National Park",
+    pageTitle: "Amy",
     description: "National Park in the United States",
     address: "1234 SE Yellowstone St.",
     imageUrl:
@@ -47,6 +50,7 @@ const DUMMY_PLACES = [
   {
     id: "p4",
     title: "Disneyland",
+    pageTitle: "Dakota",
     description: "Large Amusement park in California",
     address: "5678 SE Disney St.",
     imageUrl:

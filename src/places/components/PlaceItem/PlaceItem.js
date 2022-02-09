@@ -7,12 +7,9 @@ import Map from "../../../shared/components/UIElements/Map/Map";
 import { UserContext } from "../../../shared/user-context/user-context";
 
 const PlaceItem = (props) => {
-  
   /** gives the component access to the login status of the user */
   const loginStatus = useContext(UserContext);
-
   const [showMap, setShowMap] = useState(false);
-
   const openMapHandler = () => {
     setShowMap(true);
   };
@@ -42,6 +39,7 @@ const PlaceItem = (props) => {
 
   return (
     <React.Fragment>
+
       <Modal
         style={{ marginTop: "100px" }}
         show={showMap}
@@ -73,6 +71,7 @@ const PlaceItem = (props) => {
         </p>
       </Modal>
       <li className="place-item">
+        <h1>{`${props.pageTitle}'s places`}</h1>
         <Card className="place-item-card">
           <div>
             <img
@@ -84,6 +83,7 @@ const PlaceItem = (props) => {
 
           <div className="place-item-information">
             <div>
+              
               <h2 className="place-item-title">{props.title}</h2>
               <p className="place-item-description">{props.description}</p>
               <h3 className="place-item-address">{props.address}</h3>
