@@ -8,5 +8,19 @@
   margin-left: 25px;
 }
 
+.home-page-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 16px;
+  overflow-wrap: break-word;
+}
+
+.home-page-header p {
+  font-size: 14px;
+  color: #fe6601;
+  font-style: italic;
+}
+
 @media (min-width: 550px) {
 }
