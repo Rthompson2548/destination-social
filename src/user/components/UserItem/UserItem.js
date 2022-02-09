@@ -7,7 +7,7 @@ import Card from "../../../shared/components/UIElements/Card/Card";
 const UserItem = (props) => {
   return (
     <li className="user">
-      <Card>
+      {/* <Card> */}
         <Link to={`/${props.id}/places`}>
           <div className="user-container">
             <div className="right">
@@ -21,7 +21,7 @@ const UserItem = (props) => {
             </div>
           </div>
         </Link>
-      </Card>
+      {/* </Card> */}
     </li>
   );
 };

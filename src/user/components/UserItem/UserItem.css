@@ -3,7 +3,7 @@
 .user-container {
   display: flex;
   flex-direction: row;
-  margin: 6px;
+  margin-top: 50px;
 }
 
 .user-info {

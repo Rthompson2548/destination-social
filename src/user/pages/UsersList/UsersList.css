@@ -4,8 +4,8 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  /* margin: 5% 10%; */
-  margin-right: 10%;
+  align-items: flex-start;
+  margin-left: 25px;
 }
 
 @media (min-width: 550px) {
