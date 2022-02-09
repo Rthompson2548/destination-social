@@ -5,8 +5,10 @@
 }
 
 .place-item-card {
-  padding: 24px;
-  margin: 10% 5%;
+  padding-bottom: 400px;
+  padding-right: 25px;
+  padding-left: 20px;
+  padding-top: 25px;
 }
 
 .place-item-information {
