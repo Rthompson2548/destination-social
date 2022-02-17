@@ -3,7 +3,6 @@
 .user-container {
   display: flex;
   flex-direction: row;
-  margin-top: 50px;
 }
 
 .user-info {
@@ -15,7 +14,16 @@
 
 .user-name {
   font-size: 18px;
-  font-weight: bold;
+  font-weight: bold;  
+  color: rgb(0, 0, 0);
+}
+
+.user-bio {
+  font-size: 12px;
+  font-style: italic;
+  color: rgb(116, 116, 116);
+  font-weight: lighter;
+  width: 200px;
 }
 
 .user-places {

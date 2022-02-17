@@ -16,8 +16,8 @@ const UsersList = (props) => {
   return (
     <div>
       <div className="home-page-header">
-        <h1>Social Destinations</h1>
-        <p>Share your adventures and fine new ones</p>
+        <h1>Destination Social</h1>
+        <p>Share & discover new adventures</p>
      </div>
       <ul className="users-list">
         {props.items.map((user) => (
@@ -26,6 +26,7 @@ const UsersList = (props) => {
             id={user.id}
             image={user.image}
             name={user.name}
+            bio={user.bio}
             placeCount={user.places}
           />
         ))}
