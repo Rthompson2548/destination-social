@@ -11,12 +11,12 @@ const UserItem = (props) => {
             <div className="right">
               <Avatar image={props.image} alt={props.name} />
             </div>
-            <div className="user-info">
+          <div className="user-info">
             <h2 className="user-name">{props.name}</h2>
             <h4 className="user-bio">{props.bio}</h4>
               <h3 className="user-places">
                 {props.placeCount} {props.placeCount === 1 ? "Place" : "Places"}
-              </h3>
+            </h3>
             </div>
           </div>
         </Link>

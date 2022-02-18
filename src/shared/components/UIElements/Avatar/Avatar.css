@@ -4,4 +4,6 @@
   display: block;
   border-radius: 70%;
   object-fit: cover;
+  margin-top: 18px;
+  margin-right: 8px;
 }

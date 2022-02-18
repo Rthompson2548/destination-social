@@ -3,6 +3,7 @@
 .user-container {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 .user-info {
@@ -30,6 +31,7 @@
   font-size: 12px;
   color: rgb(116, 116, 116);
   font-weight: 300;
+ 
 }
 
 @media (min-width: 550px) {
